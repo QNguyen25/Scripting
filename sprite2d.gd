@@ -7,10 +7,27 @@ func _init():
 	print("hi")
 	
 	
-
-func _process(delta):
-	rotation += angular_speed * delta
 	
-	var velocity = Vector2.UP.rotated(rotation) * speed
+	
+func _process(delta):
+	#rotation += angular_speed * delta
+	
+	#var velocity = Vector2.UP.rotated(rotation) * speed
+	#position += velocity * delta
+	var direction = 0
+	#if the player presses the a key turn left
+	if Input.is_action_pressed("left"):
+		direction = -1
+	#if the player presses the d key turn right
+	if Input.is_action_pressed("right"):
+		direction = 1
+	
+	print(direction)
+	rotation += angular_speed * delta * direction 
+	
+	var velocity = Vector2.ZERO
+	if Input.is_action_pressed("up"):
+		velocity = Vector2.UP.rotated(rotation) * speed
+	
 	position += velocity * delta
 	
