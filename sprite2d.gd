@@ -1,4 +1,4 @@
-extends Sprite2D
+extends CharacterBody2D
 
 var speed = 400.0
 var angular_speed = PI
