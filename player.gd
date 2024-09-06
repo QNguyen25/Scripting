@@ -3,6 +3,8 @@ extends CharacterBody2D
 
 var speed = 400.0
 var angular_speed = PI
+var score = 0
+
 
 func _init():
 	print("hi")
@@ -29,5 +31,13 @@ func _process(delta):
 	if Input.is_action_pressed("up"):
 		velocity = Vector2.UP.rotated(rotation) * speed
 	
+	
 	position += velocity * delta
 	
+	
+	
+func increase_score():
+	score += 1
+	print(score)
+	#send a signal to update the score text
+	#scoreIncraese.emit(score)

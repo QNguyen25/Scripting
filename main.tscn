@@ -17,6 +17,7 @@ position = Vector2(230, 397)
 position = Vector2(754, 377)
 
 [node name="Button" type="Button" parent="."]
+process_mode = 3
 offset_left = 500.0
 offset_top = 41.0
 offset_right = 652.0
