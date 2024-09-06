@@ -1,15 +1,27 @@
-[gd_scene load_steps=3 format=3 uid="uid://cjm47rv6nofd8"]
+[gd_scene load_steps=4 format=3 uid="uid://cjm47rv6nofd8"]
 
 [ext_resource type="PackedScene" uid="uid://vnqmbtrl7gdp" path="res://player.tscn" id="1_0vy6i"]
+[ext_resource type="Script" path="res://main.gd" id="1_bvp17"]
 [ext_resource type="PackedScene" uid="uid://dvjn162j3k55" path="res://collectable.tscn" id="2_6f048"]
 
 [node name="main" type="Node2D"]
+script = ExtResource("1_bvp17")
 
 [node name="Player" parent="." instance=ExtResource("1_0vy6i")]
-position = Vector2(436, 90)
+position = Vector2(480, 191)
 
 [node name="Collectable" parent="." instance=ExtResource("2_6f048")]
-position = Vector2(217, 228)
+position = Vector2(230, 397)
 
 [node name="Collectable2" parent="." instance=ExtResource("2_6f048")]
-position = Vector2(672, 236)
+position = Vector2(754, 377)
+
+[node name="Button" type="Button" parent="."]
+offset_left = 500.0
+offset_top = 41.0
+offset_right = 652.0
+offset_bottom = 80.0
+text = "STOP
+"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
