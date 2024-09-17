@@ -4,7 +4,7 @@ extends CharacterBody2D
 var speed = 400.0
 var angular_speed = PI
 var score = 0
-signal scoreIncrease(score)
+signal scoreIncreased(score)
 
 
 func _init():
@@ -41,4 +41,4 @@ func increase_score():
 	score += 1
 	print(score)
 	#send a signal to update the score text
-	scoreIncrease.emit(score)
+	scoreIncreased.emit(score)
